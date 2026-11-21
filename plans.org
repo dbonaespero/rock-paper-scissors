@@ -2,3 +2,8 @@
 an assignment from [[https://www.theodinproject.com/lessons/foundations-rock-paper-scissors][here]]
 
 ** pseudocode #1
+DEF-F getComputerChoice:
+  which randomly RETURNS "rock", "paper" or "scissors" via
+  IF randomNum < 1/3 THEN "rock"
+  ELIF randomNum < 2/3 THEN "paper"
+  ELSE "scissors"
