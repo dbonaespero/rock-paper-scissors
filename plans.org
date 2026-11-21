@@ -7,3 +7,6 @@ DEF-F getComputerChoice:
   IF randomNum < 1/3 THEN "rock"
   ELIF randomNum < 2/3 THEN "paper"
   ELSE "scissors"
+
+DEF-F getHumanChoice: READ it and RETURN
+  
