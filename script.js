@@ -9,8 +9,11 @@ let getComputerChoice = () => {
 
 let getHumanChoice = () => prompt("rock, paper, or scissors?");
 
+let humanScore = 0;
+let computerScore = 0;
+
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 console.log(getComputerChoice());
 
-console.log(getHumanChoice())
+console.log(getHumanChoice());

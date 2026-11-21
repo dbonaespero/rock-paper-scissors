@@ -9,4 +9,8 @@ DEF-F getComputerChoice:
   ELSE "scissors"
 
 DEF-F getHumanChoice: READ it and RETURN
+
+GLOBAL:
+  Initialize humanScore variable with 0
+  Initialize computerScore variable with 0
   
