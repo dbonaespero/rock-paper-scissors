@@ -1,0 +1,4 @@
+* non-gui
+an assignment from [[https://www.theodinproject.com/lessons/foundations-rock-paper-scissors][here]]
+
+** pseudocode #1
