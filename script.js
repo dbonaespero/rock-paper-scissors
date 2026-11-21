@@ -1,4 +1,4 @@
-let addComputerChoice = () => {
+let getComputerChoice = () => {
     let n = Math.random();
     return n < 1/3 
         ? "rock"
@@ -7,6 +7,10 @@ let addComputerChoice = () => {
         : "scissors";
 };
 
-console.log(addComputerChoice());
-console.log(addComputerChoice());
-console.log(addComputerChoice());
+let getHumanChoice = () => prompt("rock, paper, or scissors?");
+
+console.log(getComputerChoice());
+console.log(getComputerChoice());
+console.log(getComputerChoice());
+
+console.log(getHumanChoice())
