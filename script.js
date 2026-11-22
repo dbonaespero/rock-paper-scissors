@@ -9,8 +9,9 @@ let getComputerChoice = () => {
 
 let getHumanChoice = () => prompt("rock, paper, or scissors?");
 
-let playRound = (humanChoice, computerChoice) => {
-    let determineWinner = () => {
+let playGame = () => {
+
+    let determineWinner = (humanChoice, computerChoice) => {
         if (humanChoice === computerChoice) {
             return "Draw!";
         }
@@ -43,14 +44,26 @@ let playRound = (humanChoice, computerChoice) => {
         }
     };
 
-    console.log(determineWinner(humanChoice.toLowerCase(), computerChoice.toLowerCase()));
+    let declareWinner = () => console.log(
+        humanScore > computerScore
+        ? "YOU WIN!"
+        : humanScore < computerScore
+        ? "YOU LOSE!"
+        : "DRAW!"
+    );
+
+    let playRound = (humanChoice, computerChoice) => {
+        console.log(determineWinner(humanChoice.toLowerCase(), computerChoice.toLowerCase()));
+    };
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+
+    declareWinner();
 };
-
-let humanScore = 0;
-let computerScore = 0;
-
-hC = getHumanChoice();
-cC = getComputerChoice();
-console.log(hC, cC);
-
-playRound(hC, cC);
