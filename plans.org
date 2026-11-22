@@ -10,6 +10,43 @@ DEF-F getComputerChoice:
 
 DEF-F getHumanChoice: READ it and RETURN
 
+DEF-F playRound: OBTAIN humanChoice and computerChoice:
+  DEF-F determineWinner:
+    IF humanChoice and computerChoice equals
+    THEN
+      RETURN "Draw!"
+    ELIF humanChoice is "rock" and computerChoice is "paper"
+    THEN
+      INC computerScore
+      RETURN "You lose! Paper beats Rock."
+    ELIF humanChoice is "rock" and computerChoice is "scissors"
+    THEN
+      INC humanScore
+      RETURN "You win! Rock beats scissors."
+    ELIF humanChoice is "paper" and computerChoice is "rock"
+    THEN
+      INC humanScore
+      RETURN "You win! Paper beats Rock."
+    ELIF humanChoice is "paper" and computerChoice is "scissors"
+    THEN
+      INC computerScore
+      RETURN "You lose! Scissors beats Paper."
+    ELIF humanChoice is "scissors" and computerChoice is "rock"
+    THEN
+      INC computerScore
+      RETURN "You lose! Rock beats Scissors."
+    ELIF humanChoice is "scissors" and computerChoice is "paper"
+    THEN
+      INC humanChoice
+      RETURN "You win! Scissors beats Paper."
+    ELSE
+      RETURN "ERROR"
+
+  CALL low-caser method for humanChoice
+  CALL low-caser method for computerChoice
+  LET winner-msg is CALL determineWinner
+  PRINT winner-msg
+
 GLOBAL:
   Initialize humanScore variable with 0
   Initialize computerScore variable with 0
