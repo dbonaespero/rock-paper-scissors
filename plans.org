@@ -10,7 +10,7 @@ DEF-F getComputerChoice:
 
 DEF-F getHumanChoice: READ it and RETURN
 
-DEF-F playRound: OBTAIN humanChoice and computerChoice:
+DEF-F playGame:
   DEF-F determineWinner:
     IF humanChoice and computerChoice equals
     THEN
@@ -42,12 +42,29 @@ DEF-F playRound: OBTAIN humanChoice and computerChoice:
     ELSE
       RETURN "ERROR"
 
-  CALL low-caser method for humanChoice
-  CALL low-caser method for computerChoice
-  LET winner-msg is CALL determineWinner
-  PRINT winner-msg
+  DEF-F declareWinner:
+    IF humanScore === computerScore
+    THEN PRINT "DRAW!"
+    ELIF humanScore > computerScore
+    THEN PRINT "YOU WIN!"
+    ELSE PRINT "YOU LOSE!"
 
-GLOBAL:
+  DEF-F playRound: OBTAIN humanChoice and computerChoice:
+    CALL low-caser method for humanChoice
+    CALL low-caser method for computerChoice
+    LET winner-msg is CALL determineWinner
+    PRINT winner-msg
+
   Initialize humanScore variable with 0
   Initialize computerScore variable with 0
+  
+  CALL playRound
+  CALL playRound
+  CALL playRound
+  CALL playRound
+  CALL playRound
+
+  CALL declareWinner
+
+  
   
