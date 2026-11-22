@@ -24,19 +24,19 @@ let playGame = () => {
             return "You win! Rock beats scissors.";
         }
         else if (humanChoice === "paper" && computerChoice === "rock") {
-            humanChoice++;
+            humanScore++;
             return "You win! Paper beats Rock.";
         }
         else if (humanChoice === "paper" && computerChoice === "scissors") {
-            computerChoice++;
+            computerScore++;
             return "You lose! Scissors beats Paper.";
         }
         else if (humanChoice === "scissors" && computerChoice === "rock") {
-            computerChoice++;
+            computerScore++;
             return "You lose! Rock beats Scissors.";
         }
         else if (humanChoice === "scissors" && computerChoice === "paper") {
-            humanChoice++;
+            humanScore++;
             return "You win! Scissors beats Paper.";
         }
         else {
